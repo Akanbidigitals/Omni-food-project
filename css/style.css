@@ -5,12 +5,17 @@
 }
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
+
+  /* smooth scroll doesnt work on safari */
+  /* scroll-behavior: smooth; */
 }
 body {
   font-family: "Rubik", sans-serif;
   line-height: 1;
   font-weight: 400;
   color: #555;
+  overflow-x: hidden;
 }
 
 /*************************************/
@@ -19,7 +24,7 @@ body {
 .main-nav-list {
   list-style: none;
   display: flex;
-  gap: 3.2rem;
+  gap: 4.8rem;
   /* justify-items: center; */
   align-items: center;
 }
@@ -59,6 +64,24 @@ body {
   background-color: #fae5d3;
   align-items: center;
   padding: 0 4.8rem;
+  position: relative;
+}
+.sticky .header {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  /* background-color: rgba(250, 229, 211, 0.5); */
+  background-color: #fff;
+  z-index: 9999;
+  height: 8rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
+}
+
+.sticky .section-hero {
+  margin-top: 9.6rem;
 }
 .logo {
   height: 2.4rem;
@@ -67,6 +90,9 @@ body {
   background-color: #fae5d3;
   padding: 4.8rem 0 9.6rem 0;
 }
+/* .section-hero {
+  margin-top: 9.6rem;
+} */
 .hero {
   max-width: 130rem;
   display: grid;
@@ -89,7 +115,7 @@ body {
   margin-bottom: 3.2rem;
 }
 .heading-secondary {
-  font-size: 3.6rem;
+  font-size: 4.4rem;
   line-height: 1.2;
   margin-bottom: 9.6rem;
 }
@@ -381,7 +407,8 @@ strong {
   font-size: 1.8rem;
   display: flex;
   align-items: center;
-  gap: 1.6rem;
+  gap: 1.8rem;
+  line-height: 1.2;
 }
 .list-icon {
   width: 3rem;
@@ -440,6 +467,7 @@ strong {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.6rem;
+  padding: 1rem;
 }
 figure {
   overflow: hidden;
@@ -494,12 +522,12 @@ figure {
 .pricing-plan--starter {
   justify-self: end;
   border: 2px solid #fdf2e9;
-  padding: 4.2rem;
+  padding: 4.6rem;
 }
 
 .pricing-plan--complete {
   background-color: #fdf2e9;
-  padding: 4.6rem;
+  padding: 4.8rem;
   position: relative;
   overflow: hidden;
 }
@@ -510,7 +538,7 @@ figure {
   columns: #333;
   padding: 0.8em 8rem;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
   top: 6%;
   right: -18%;
   position: absolute;
@@ -552,7 +580,7 @@ figure {
   grid-template-columns: 2fr 1fr;
   background-image: linear-gradient(to right bottom, #eb984e, #e67e22);
   border-radius: 11px;
-  height: 50rem;
+  /* height: 50rem; */
   overflow: hidden;
 }
 .cta-text-box {
@@ -693,4 +721,19 @@ figure {
 .footer-link:hover,
 .footer-link:active {
   color: #555;
+}
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: none;
+}
+
+.icon-mobile-nav {
+  height: 4.8rem;
+  width: 4.8rem;
+  color: #333;
+}
+.icon-mobile-nav[name="close-outline"] {
+  display: none;
 }
